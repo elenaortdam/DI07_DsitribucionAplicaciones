@@ -20,8 +20,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form PantallaPrincipal
      */
-    
     private PantallaTablaReservas tablaReservas;
+
     public PantallaPrincipal() {
         initComponents();
         //Ponemos el fondo de la aplicación blanco
@@ -30,9 +30,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         tablaReservas = new PantallaTablaReservas();
         verAyuda();
     }
-    
-    public PantallaTablaReservas getTablaReservas(){
-       return this.tablaReservas;
+
+    public PantallaTablaReservas getTablaReservas() {
+        return this.tablaReservas;
     }
 
     /**
@@ -240,11 +240,13 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     public void verAyuda() {
 
+        // File file = new File("resources" + File.separator + "help" + File.separator + "Ayuda.hs");
         File file = new File("help" + File.separator + "Ayuda.hs");
         URL hsURL;
         HelpSet helpSet;
         try {
             hsURL = file.toURI().toURL();
+            System.out.println(hsURL);
             helpSet = new HelpSet(getClass().getClassLoader(), hsURL);
 
             HelpBroker hb = helpSet.createHelpBroker();
